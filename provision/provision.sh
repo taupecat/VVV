@@ -96,7 +96,7 @@ apt_package_check_list=(
 	# trouble with in Linux.
 	dos2unix
 
-	# nodejs for use by grunt
+	# nodejs for use by gulp
 	g++
 	nodejs
 
@@ -223,22 +223,18 @@ if [[ $ping_result == "Connected" ]]; then
 		COMPOSER_HOME=/usr/local/src/composer composer global update
 	fi
 
-	# Grunt
+	# Gulp
 	#
-	# Install or Update Grunt based on current state.  Updates are direct
+	# Install or Update Gulp based on current state.  Updates are direct
 	# from NPM
-	if [[ "$(grunt --version)" ]]; then
-		echo "Updating Grunt CLI"
-		npm update -g grunt-cli &>/dev/null
-		npm update -g grunt-sass &>/dev/null
-		npm update -g grunt-cssjanus &>/dev/null
-		npm update -g grunt-rtlcss &>/dev/null
+	if [[ "$(gulp --version)" ]]; then
+		echo "Updating Gulp CLI"
+		npm update -g gulp &>/dev/null
+		npm update -g gulp-ruby-sass &>/dev/null
 	else
-		echo "Installing Grunt CLI"
-		npm install -g grunt-cli &>/dev/null
-		npm install -g grunt-sass &>/dev/null
-		npm install -g grunt-cssjanus &>/dev/null
-		npm install -g grunt-rtlcss &>/dev/null
+		echo "Installing Gulp CLI"
+		npm install -g gulp &>/dev/null
+		npm install -g gulp-ruby-sass &>/dev/null
 	fi
 
 	# Graphviz
@@ -574,85 +570,6 @@ PHP
 		echo "Updating WordPress Stable..."
 		cd /srv/www/wordpress-default
 		wp core upgrade
-	fi
-
-	# Test to see if an svn upgrade is needed
-	svn_test=$( svn status -u /srv/www/wordpress-develop/ 2>&1 );
-	if [[ $svn_test == *"svn upgrade"* ]]; then
-		# If the wordpress-develop svn repo needed an upgrade, they probably all need it
-		for repo in $(find /srv/www -maxdepth 5 -type d -name '.svn'); do
-			svn upgrade "${repo/%\.svn/}"
-		done
-	fi;
-
-	# Checkout, install and configure WordPress trunk via core.svn
-	if [[ ! -d /srv/www/wordpress-trunk ]]; then
-		echo "Checking out WordPress trunk from core.svn, see https://core.svn.wordpress.org/trunk"
-		svn checkout https://core.svn.wordpress.org/trunk/ /srv/www/wordpress-trunk
-		cd /srv/www/wordpress-trunk
-		echo "Configuring WordPress trunk..."
-		wp core config --dbname=wordpress_trunk --dbuser=wp --dbpass=wp --quiet --extra-php <<PHP
-// Match any requests made via xip.io.
-if ( isset( \$_SERVER['HTTP_HOST'] ) && preg_match('/^(local.wordpress-trunk.)\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(.xip.io)\z/', \$_SERVER['HTTP_HOST'] ) ) {
-	define( 'WP_HOME', 'http://' . \$_SERVER['HTTP_HOST'] );
-	define( 'WP_SITEURL', 'http://' . \$_SERVER['HTTP_HOST'] );
-}
-
-define( 'WP_DEBUG', true );
-PHP
-		echo "Installing WordPress trunk..."
-		wp core install --url=local.wordpress-trunk.dev --quiet --title="Local WordPress Trunk Dev" --admin_name=admin --admin_email="admin@local.dev" --admin_password="password"
-	else
-		echo "Updating WordPress trunk..."
-		cd /srv/www/wordpress-trunk
-		svn up
-	fi
-
-	# Checkout, install and configure WordPress trunk via develop.svn
-	if [[ ! -d /srv/www/wordpress-develop ]]; then
-		echo "Checking out WordPress trunk from develop.svn, see https://develop.svn.wordpress.org/trunk"
-		svn checkout https://develop.svn.wordpress.org/trunk/ /srv/www/wordpress-develop
-		cd /srv/www/wordpress-develop/src/
-		echo "Configuring WordPress develop..."
-		wp core config --dbname=wordpress_develop --dbuser=wp --dbpass=wp --quiet --extra-php <<PHP
-// Match any requests made via xip.io.
-if ( isset( \$_SERVER['HTTP_HOST'] ) && preg_match('/^(src|build)(.wordpress-develop.)\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(.xip.io)\z/', \$_SERVER['HTTP_HOST'] ) ) {
-	define( 'WP_HOME', 'http://' . \$_SERVER['HTTP_HOST'] );
-	define( 'WP_SITEURL', 'http://' . \$_SERVER['HTTP_HOST'] );
-} else if ( 'build' === basename( dirname( __FILE__ ) ) ) {
-	// Allow (src|build).wordpress-develop.dev to share the same Database
-	define( 'WP_HOME', 'http://build.wordpress-develop.dev' );
-	define( 'WP_SITEURL', 'http://build.wordpress-develop.dev' );
-}
-
-define( 'WP_DEBUG', true );
-PHP
-		echo "Installing WordPress develop..."
-		wp core install --url=src.wordpress-develop.dev --quiet --title="WordPress Develop" --admin_name=admin --admin_email="admin@local.dev" --admin_password="password"
-		cp /srv/config/wordpress-config/wp-tests-config.php /srv/www/wordpress-develop/
-		cd /srv/www/wordpress-develop/
-		echo "Running npm install for the first time, this may take several minutes..."
-		npm install &>/dev/null
-	else
-		echo "Updating WordPress develop..."
-		cd /srv/www/wordpress-develop/
-		if [[ -e .svn ]]; then
-			svn up
-		else
-			if [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]]; then
-				git pull --no-edit git://develop.git.wordpress.org/ master
-			else
-				echo "Skip auto git pull on develop.git.wordpress.org since not on master branch"
-			fi
-		fi
-		echo "Updating npm packages..."
-		npm install &>/dev/null
-	fi
-
-	if [[ ! -d /srv/www/wordpress-develop/build ]]; then
-		echo "Initializing grunt in WordPress develop... This may take a few moments."
-		cd /srv/www/wordpress-develop/
-		grunt
 	fi
 
 	# Download phpMyAdmin

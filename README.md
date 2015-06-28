@@ -4,6 +4,14 @@ Varying Vagrant Vagrants is an open source [Vagrant](https://www.vagrantup.com) 
 
 VVV is a [10up](http://10up.com) creation and [transitioned](http://10up.com/blog/varying-vagrant-vagrants-future/) to a community organization in 2014.
 
+===
+
+**This is a fork of Varying Vagrant Vagrants configured to use [Gulp](http://gulpjs.com/) instead of [Grunt](http://gruntjs.com/).**
+
+Also, only pulling in the latest stable version of WordPress, intended for site development.
+
+===
+
 * **Version**: 1.x.x-working
 * **Latest Stable**: [1.2.0](https://github.com/varying-vagrant-vagrants/vvv/tree/1.2.0)
 * **Web**: [http://varyingvagrantvagrants.org/](http://varyingvagrantvagrants.org/)
