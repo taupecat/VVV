@@ -237,6 +237,11 @@ if [[ $ping_result == "Connected" ]]; then
 		npm install -g gulp-ruby-sass &>/dev/null
 	fi
 
+	# Ruby Sass
+	#
+	# Install Ruby Sass for compiling our Sass into CSS.
+	gem install sass
+
 	# Graphviz
 	#
 	# Set up a symlink between the Graphviz path defined in the default Webgrind
