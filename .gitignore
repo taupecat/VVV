@@ -59,3 +59,4 @@
 # Exclude a few things we might come across
 node_modules
 vendor
+.sass-cache

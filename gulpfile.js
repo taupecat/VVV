@@ -5,19 +5,19 @@
  */
 var gulp			= require('gulp'),
 	sass			= require('gulp-ruby-sass'),
-	theme_name		= '',
-	theme_dir		= __dirname + '/www/wordpress-default/' + theme_name,
+	theme_name		= 'generalassembly',
+	theme_dir		= __dirname + '/www/wordpress-default/wp-content/themes/' + theme_name,
 	sass_dir		= theme_dir + '/sass';
 
 /**
  * Build a task to compile our Sass into CSS
  */
 gulp.task('styles', function() {
-	return gulp.src( sass_dir + '/*.scss' )
-		.pipe( sass( {
-			errLogToConsole: true
-		} ) )
-		.pipe( gulp.dest( theme_dir '/style.css' ) );
+	return sass( sass_dir + '/style.scss' )
+		.on( 'error', function( err ) {
+			console.error( 'Error!', err.message )
+		})
+		.pipe( gulp.dest( theme_dir ) );
 });
 
 

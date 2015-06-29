@@ -240,7 +240,7 @@ if [[ $ping_result == "Connected" ]]; then
 	# Ruby Sass
 	#
 	# Install Ruby Sass for compiling our Sass into CSS.
-	gem install sass
+	rvm @global do gem install sass
 
 	# Graphviz
 	#
