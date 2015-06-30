@@ -20,19 +20,16 @@ if ( file_exists( 'dashboard-custom.php' ) ) {
 <body>
 <ul class="nav">
 	<li class="active"><a href="#">Home</a></li>
-	<li><a href="https://github.com/varying-vagrant-vagrants/vvv/">Repository</a></li>
 	<li><a href="database-admin/">phpMyAdmin</a></li>
 	<li><a href="memcached-admin/">phpMemcachedAdmin</a></li>
 	<li><a href="opcache-status/opcache.php">Opcache Status</a></li>
+	<li><a href="http://vvv.dev:1080">Mailcatcher</a></li>
 	<li><a href="webgrind/">Webgrind</a></li>
 	<li><a href="phpinfo/">PHP Info</a></li>
 </ul>
 
 <ul class="nav">
 	<li><a href="http://local.wordpress.dev/">http://local.wordpress.dev</a> for WordPress stable (www/wordpress-default)</li>
-	<li><a href="http://local.wordpress-trunk.dev/">http://local.wordpress-trunk.dev</a> for WordPress trunk (www/wordpress-trunk)</li>
-	<li><a href="http://src.wordpress-develop.dev/">http://src.wordpress-develop.dev</a> for trunk WordPress development files (www/wordpress-develop/src)</li>
-	<li><a href="http://build.wordpress-develop.dev/">http://build.wordpress-develop.dev</a> for a Grunt build of those development files (www/wordpress-develop/build)</li>
 </ul>
 </body>
 </html>
