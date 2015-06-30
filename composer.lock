@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "90d93e9d967fdd4f715cad772ac3f5b9",
+    "hash": "6f9471fce5a61a708862999004121227",
     "packages": [
         {
             "name": "composer/installers",
@@ -182,6 +182,26 @@
             "homepage": "https://wordpress.org/plugins/json-rest-api/"
         },
         {
+            "name": "wpackagist-plugin/limit-login-attempts",
+            "version": "1.7.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/limit-login-attempts/",
+                "reference": "tags/1.7.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts.1.7.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/limit-login-attempts/"
+        },
+        {
             "name": "wpackagist-plugin/regenerate-thumbnails",
             "version": "2.2.4",
             "source": {
@@ -220,6 +240,46 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/show-template/"
+        },
+        {
+            "name": "wpackagist-plugin/simple-login-log",
+            "version": "1.1.0",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/simple-login-log/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-login-log.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simple-login-log/"
+        },
+        {
+            "name": "wpackagist-plugin/sucuri-scanner",
+            "version": "1.7.11",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/sucuri-scanner/",
+                "reference": "tags/1.7.11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.1.7.11.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/sucuri-scanner/"
         },
         {
             "name": "wpackagist-plugin/theme-check",
@@ -280,6 +340,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-migrate-db/"
+        },
+        {
+            "name": "wpackagist-plugin/wpclef",
+            "version": "2.3.0",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wpclef/",
+                "reference": "tags/2.3.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wpclef.2.3.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wpclef/"
         }
     ],
     "packages-dev": [],
