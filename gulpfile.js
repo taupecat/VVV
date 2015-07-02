@@ -5,7 +5,7 @@
  */
 var gulp			= require('gulp'),
 	sass			= require('gulp-ruby-sass'),
-	theme_name		= 'generalassembly',
+	theme_name		= '',
 	theme_dir		= __dirname + '/www/wordpress-default/wp-content/themes/' + theme_name,
 	sass_dir		= theme_dir + '/sass';
 
