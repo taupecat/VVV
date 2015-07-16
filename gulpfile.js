@@ -22,10 +22,23 @@ gulp.task('styles', function() {
 
 
 /**
+ * Same thing as above, but for our static prototype
+ */
+gulp.task('styles-prototype', function() {
+	return sass( __dirname + '/www/default/prototype/sass/style.scss' )
+		.on( 'error', function( err ) {
+			console.error( 'Error!', err.message )
+		})
+		.pipe( gulp.dest( __dirname + '/www/default/prototype' ) );
+});
+
+
+/**
  * As there is only one task, the default task only references the "styles" task
  */
 gulp.task('default', function() {
 	gulp.start('styles');
+	gulp.start('styles-prototype');
 });
 
 
@@ -34,4 +47,5 @@ gulp.task('default', function() {
  */
 gulp.task('watch', function() {
 	gulp.watch( sass_dir + '/**/*.scss', ['styles'] );
+	gulp.watch( __dirname + '/www/default/prototype/sass/**/*.scss', ['styles-prototype'] );
 });
