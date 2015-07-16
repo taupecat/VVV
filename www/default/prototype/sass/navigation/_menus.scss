@@ -1,8 +1,19 @@
 .main-navigation {
+	background: $color__black linear-gradient( to bottom, #444, #151515 );
 	clear: both;
 	display: block;
 	float: left;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 percentage( 10px / 320px );
 	width: 100%;
+
+	.menu-toggle {
+		@extend %open-sans--semibold;
+		color: $color__white;
+		font-size: 15px;
+		text-transform: uppercase;
+	}
 
 	ul {
 		display: none;
