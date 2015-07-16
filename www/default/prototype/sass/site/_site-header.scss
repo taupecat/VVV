@@ -19,19 +19,17 @@
 		&__container {
 			background: transparentize( #000, 0.5 );
 			bottom: 0;
+			color: $color__white;
+			display: block;
 			padding: 10px;
 			position: absolute;
+			text-decoration: none;
 			width: 100%;
 		}
 
 		.site-title {
 			font-size: 20px;
 			margin: 0;
-
-			a {
-				color: $color__white;
-				text-decoration: none;
-			}
 		}
 
 		.site-description {
