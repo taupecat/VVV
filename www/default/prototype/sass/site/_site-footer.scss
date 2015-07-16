@@ -1,0 +1,11 @@
+.site-footer {
+	@extend %open-sans--bold;
+	background-color: $color__black;
+	padding: 10px percentage(10px / 320px);
+	text-transform: uppercase;
+
+	a {
+		color: $color__white;
+		text-decoration: none;
+	}
+}

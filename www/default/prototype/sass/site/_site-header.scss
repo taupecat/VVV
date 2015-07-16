@@ -28,15 +28,15 @@
 		}
 
 		.site-title {
-			font-size: 20px;
 			margin: 0;
+			@include font-size(20px / 14px);
 		}
 
 		.site-description {
 			@extend %droid-serif--normal--italic;
 			color: $color__white;
-			font-size: 12px;
 			margin: 0;
+			@include font-size(12px / 14px);
 		}
 	}
 }
