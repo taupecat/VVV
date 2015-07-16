@@ -1,0 +1,44 @@
+.site-header {
+	border-top: 4px solid $color__black;
+
+	.site-branding {
+		background: {
+			image: url('images/header-narrow.jpg');
+			position: center bottom;
+			size: cover;
+		}
+		position: relative;
+
+		&::before {
+			content: '';
+			display: block;
+			padding-top: percentage( 160px / 320px );
+			width: 100%;
+		}
+
+		&__container {
+			background: transparentize( #000, 0.5 );
+			bottom: 0;
+			padding: 10px;
+			position: absolute;
+			width: 100%;
+		}
+
+		.site-title {
+			font-size: 20px;
+			margin: 0;
+
+			a {
+				color: $color__white;
+				text-decoration: none;
+			}
+		}
+
+		.site-description {
+			@extend %droid-serif--normal--italic;
+			color: $color__white;
+			font-size: 12px;
+			margin: 0;
+		}
+	}
+}
