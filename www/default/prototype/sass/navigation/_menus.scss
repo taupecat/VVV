@@ -13,6 +13,10 @@
 		color: $color__white;
 		text-transform: uppercase;
 		@include font-size(15px / 14px);
+
+		@media (min-width: 600px) {
+			display: none;
+		}
 	}
 
 	ul {
@@ -68,13 +72,25 @@
 		}
 	}
 	a {
+		@extend %open-sans--semibold;
+		color: $color__white;
 		display: block;
-		text-decoration: none;
+		text: {
+			decoration: none;
+			transform: uppercase;
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: transparentize( $color__white, 0.8 );
+		}
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a {
+		background-color: transparentize( $color__white, 0.8 );
 	}
 }
 
