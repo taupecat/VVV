@@ -120,44 +120,55 @@
 
 	& .nav-links .nav-previous,
 	& .nav-links .nav-next {
-		height: 32px;
+		line-height: 32px;
 		overflow: hidden;
 		position: relative;
 		text-indent: 100%;
 		white-space: nowrap;
-		width: 32px;
+		width: 50%;
 
 		a::before {
 			background-color: $color__black;
 			border-radius: 100%;
 			color: $color__white;
 			display: block;
-			height: 100%;
+			height: 32px;
 			line-height: 32px;
 			position: absolute;
 			text-align: center;
 			text-indent: 0;
-			width: 100%;
+			width: 32px;
 			@include font-size(24px / 14px);
 		}
 	}
 
-	& .nav-previous {
+	& .nav-links .nav-previous {
 		float: left;
-		width: 50%;
+
+		@media (min-width: 600px) {
+			text-indent: 40px;
+		}
 
 		a::before {
 			content: "←";
 		}
 	}
 
-	& .nav-next {
+	& .nav-links .nav-next {
 		float: right;
 		text-align: right;
-		width: 50%;
 
-		a::before {
-			content: "→";
+		@media (min-width: 600px) {
+			text-indent: 0;
+		}
+
+		a {
+			margin-right: 40px;
+
+			&::before {
+				content: "→";
+				right: 0;
+			}
 		}
 	}
 }
