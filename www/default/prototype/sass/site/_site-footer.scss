@@ -10,7 +10,8 @@
 	.site-info {
 		@extend %open-sans--bold;
 		border-top: 1px solid transparentize($color__white, 0.5);
-		padding: 10px percentage(10px / 320px);
+		margin: 0 percentage(10px / 320px);
+		padding: 10px 0;
 		text-transform: uppercase;
 	}
 

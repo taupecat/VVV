@@ -127,18 +127,27 @@
 		white-space: nowrap;
 		width: 50%;
 
-		a::before {
-			background-color: $color__black;
-			border-radius: 100%;
-			color: $color__white;
-			display: block;
-			height: 32px;
-			line-height: 32px;
-			position: absolute;
-			text-align: center;
-			text-indent: 0;
-			width: 32px;
-			@include font-size(24px / 14px);
+		a {
+			@extend %open-sans--bold;
+			color: $color__black;
+			text: {
+				decoration: none;
+				transform: uppercase;
+			}
+
+			&::before {
+				background-color: $color__black;
+				border-radius: 100%;
+				color: $color__white;
+				display: block;
+				height: 32px;
+				line-height: 32px;
+				position: absolute;
+				text-align: center;
+				text-indent: 0;
+				width: 32px;
+				@include font-size(24px / 14px);
+			}
 		}
 	}
 
