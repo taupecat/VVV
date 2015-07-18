@@ -9,11 +9,27 @@
 		}
 		position: relative;
 
+		@media (min-width: 600px) {
+			background-image: url('images/header-medium.jpg');
+		}
+
+		@media (min-width: 1000px) {
+			background-image: url('images/header-wide.jpg');
+		}
+
 		&::before {
 			content: '';
 			display: block;
 			padding-top: percentage( 160px / 320px );
 			width: 100%;
+
+			@media (min-width: 600px) {
+				padding-top: percentage( 420px / 1280px )
+			}
+
+			@media (min-width: 1000px) {
+				padding-top: percentage( 500px / 2050px );
+			}
 		}
 
 		&__container {
