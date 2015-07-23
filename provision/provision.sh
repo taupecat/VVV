@@ -512,7 +512,7 @@ PHP
 
 	# Download phpMyAdmin
 	if [[ ! -d /srv/www/default/database-admin ]]; then
-		echo "Downloading phpMyAdmin 4.2.13.1..."
+		echo "Downloading phpMyAdmin 4.4.12..."
 		cd /srv/www/default
 		wget -q -O phpmyadmin.tar.gz 'https://files.phpmyadmin.net/phpMyAdmin/4.4.12/phpMyAdmin-4.4.12-all-languages.zip'
 		tar -xf phpmyadmin.tar.gz
