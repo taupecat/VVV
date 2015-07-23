@@ -8,6 +8,9 @@ Vagrant.configure("2") do |config|
   # Store the current version of Vagrant for use in conditionals when dealing
   # with possible backward compatible issues.
   vagrant_version = Vagrant::VERSION.sub(/^v/, '')
+  
+  config.vm.define 'ga-bootcamp' do |node|
+  end
 
   # Configuration options for the VirtualBox provider.
   config.vm.provider :virtualbox do |v|
@@ -15,6 +18,7 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--cpus", 1]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+    v.name = "ga-bootcamp"
   end
 
   # Configuration options for the Parallels provider.
@@ -104,7 +108,7 @@ Vagrant.configure("2") do |config|
   # should be changed. If more than one VM is running through VirtualBox, including other
   # Vagrant machines, different subnets should be used for each.
   #
-  config.vm.network :private_network, ip: "192.168.50.4"
+  # config.vm.network :private_network, ip: "192.168.50.4"
 
   # Public Network (disabled)
   #
@@ -128,7 +132,7 @@ Vagrant.configure("2") do |config|
   #
   # Please see VVV and Vagrant documentation for additional details.
   #
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 80, host: 8080
 
   # Drive mapping
   #
