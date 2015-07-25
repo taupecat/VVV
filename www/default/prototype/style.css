@@ -725,14 +725,6 @@ a {
 .archive .format-aside .entry-title {
   display: none; }
 
-.widget-title {
-  border: solid #111;
-    border-width: 1px 0;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 15px;
-  font-size: 1.07143rem; }
-
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
