@@ -34,9 +34,6 @@
 # Log files should be ignored.
 /log/*.log
 
-# No need to share our individual sites with each other
-/www/*
-
 # And no need to share individual SQL files with each other
 *.sql
 *.sql.gz
@@ -49,14 +46,15 @@
 # And we do have a default SQL file that should be included
 !/database/init.sql
 
-# And we provide our default host names in a dat file.
-!/www/vvv-hosts
-
-# And a few of our web directories are important to share.
-/www/default/*
-!/www/default/index.php
-
 # Exclude a few things we might come across
 node_modules
 vendor
 .sass-cache
+
+/www/default/database-admin
+/www/default/memcached-admin
+/www/default/opcache-status
+/www/default/webgrind
+/www/phpcs
+/www/wordpress-default
+/www/wp-cli

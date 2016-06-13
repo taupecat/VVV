@@ -1,0 +1,40 @@
+.site-footer {
+	background-color: $color__black;
+	color: $color__white;
+
+	a {
+		color: currentColor;
+		text-decoration: none;
+	}
+
+	.site-info {
+		@extend %open-sans--bold;
+		border-top: 1px solid transparentize($color__white, 0.5);
+		margin: 0 percentage(10px / 320px);
+		padding: 10px 0;
+		text-transform: uppercase;
+	}
+
+	.footer-navigation {
+		ul {
+			padding: 0 percentage(10px / 320px);
+		}
+
+		li {
+			@extend %open-sans--semibold;
+			line-height: 2;
+			list-style: none;
+			margin: 0;
+
+			&::before {
+				content: "»\00A0\00A0";
+			}
+
+			a:hover,
+			a:focus,
+			a:active {
+				text-decoration: underline;
+			}
+		}
+	}
+}

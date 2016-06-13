@@ -1,0 +1,58 @@
+.site-header {
+	border-top: 4px solid $color__black;
+
+	.site-branding {
+		background: {
+			image: url('images/header-narrow.jpg');
+			position: center bottom;
+			size: cover;
+		}
+		position: relative;
+
+		@media (min-width: 600px) {
+			background-image: url('images/header-medium.jpg');
+		}
+
+		@media (min-width: 1000px) {
+			background-image: url('images/header-wide.jpg');
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			padding-top: percentage( 160px / 320px );
+			width: 100%;
+
+			@media (min-width: 600px) {
+				padding-top: percentage( 420px / 1280px )
+			}
+
+			@media (min-width: 1000px) {
+				padding-top: percentage( 500px / 2050px );
+			}
+		}
+
+		&__container {
+			background: transparentize( #000, 0.5 );
+			bottom: 0;
+			color: $color__white;
+			display: block;
+			padding: 10px percentage( 10px / 320px );
+			position: absolute;
+			text-decoration: none;
+			width: 100%;
+		}
+
+		.site-title {
+			margin: 0;
+			@include font-size(20px / 14px);
+		}
+
+		.site-description {
+			@extend %droid-serif--normal--italic;
+			color: $color__white;
+			margin: 0;
+			@include font-size(12px / 14px);
+		}
+	}
+}

@@ -1,0 +1,43 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+// .byline,
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.entry-title {
+	@extend %droid-serif--normal--italic;
+	@include font-size(24px / 14px);
+}
+
+.entry-meta {
+	@extend %droid-serif--normal;
+	@include font-size(15px / 14px);
+
+	time,
+	.author {
+		font-weight: $font__bold;
+	}
+}

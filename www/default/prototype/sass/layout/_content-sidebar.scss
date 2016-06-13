@@ -1,0 +1,35 @@
+.site {
+	background-color: $color__white;
+	box-shadow: 5px 0 10px transparentize( black, 0.5 ),
+		-5px 0 10px transparentize( black, 0.5 );
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.site-content {
+
+	@media (min-width: 600px) {
+		display: flex;
+	}
+
+	.content-area {
+		background-color: $color__white;
+		padding: 0 percentage( 10px / 320px );
+
+		@media (min-width: 600px) {
+			width: 60%;
+		}
+	}
+
+	.widget-area {
+		background-color: $color__gray;
+		border-top: 4px solid $color__black;
+		padding: 10px percentage(10px / 320px);
+
+		@media (min-width: 600px) {
+			border-top: none;
+			overflow: hidden;
+			width: 40%;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.widget {
+	margin: 0 0 1.5em;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+}
+
+/* Search widget. */
+.widget_search .search-submit {
+	display: none;
+}
+
+.widget-title {
+	@extend %open-sans--bold;
+	border: solid $color__black {
+		width: 1px 0;
+	}
+	text: {
+		align: center;
+		transform: uppercase;
+	}
+	@include font-size(15px / 14px);
+}

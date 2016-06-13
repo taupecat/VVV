@@ -1,0 +1,71 @@
+$font__main: "Open Sans", sans-serif;
+$font__secondary: "Droid Serif", serif;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+
+$font__normal: 400;
+$font__semibold: 600;
+$font__bold: 700;
+
+@import url(//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Open+Sans:400italic,600italic,700italic,400,600,700);
+
+/**
+ * Placeholder Selectors for @extend'ing
+ */
+
+%droid-serif--normal {
+	font-family: $font__secondary;
+	font-weight: $font__normal;
+}
+
+%droid-serif--bold {
+	font-family: $font__secondary;
+	font-weight: $font__bold;
+}
+
+%droid-serif--normal--italic {
+	font-family: $font__secondary;
+	font-weight: $font__normal;
+	font-style: italic;
+}
+
+%droid-serif--bold--italic {
+	font-family: $font__secondary;
+	font-weight: $font__bold;
+	font-style: italic;
+}
+
+%open-sans--normal {
+	font-family: $font__main;
+	font-weight: $font__normal;
+}
+
+%open-sans--semibold {
+	font-family: $font__main;
+	font-weight: $font__semibold;
+}
+
+%open-sans--bold {
+	font-family: $font__main;
+	font-weight: $font__bold;
+}
+
+%open-sans--normal--italic {
+	font-family: $font__main;
+	font-weight: $font__normal;
+	font-style: italic;
+}
+
+%open-sans--semibold--italic {
+	font-family: $font__secondary;
+	font-weight: $font__semibold;
+	font-style: italic;
+}
+
+%open-sans--bold--italic {
+	font-family: $font__secondary;
+	font-weight: $font__bold;
+	font-style: italic;
+}

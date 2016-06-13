@@ -503,7 +503,7 @@ if ( isset( \$_SERVER['HTTP_HOST'] ) && preg_match('/^(local.wordpress.)\d{1,3}\
 define( 'WP_DEBUG', true );
 PHP
 		echo "Installing WordPress Stable..."
-		wp core install --url=local.wordpress.dev --quiet --title="Local WordPress Dev" --admin_name=admin --admin_email="admin@local.dev" --admin_password="password"
+		wp core install --url=localhost:8888 --quiet --title="Local WordPress Dev" --admin_name=admin --admin_email="admin@local.dev" --admin_password="password"
 	else
 		echo "Updating WordPress Stable..."
 		cd /srv/www/wordpress-default
@@ -512,11 +512,11 @@ PHP
 
 	# Download phpMyAdmin
 	if [[ ! -d /srv/www/default/database-admin ]]; then
-		echo "Downloading phpMyAdmin 4.2.13.1..."
+		echo "Downloading phpMyAdmin 4.4.12..."
 		cd /srv/www/default
-		wget -q -O phpmyadmin.tar.gz 'http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/4.2.13.1/phpMyAdmin-4.2.13.1-all-languages.tar.gz/download'
+		wget -q -O phpmyadmin.tar.gz 'https://files.phpmyadmin.net/phpMyAdmin/4.4.12/phpMyAdmin-4.4.12-all-languages.tar.gz'
 		tar -xf phpmyadmin.tar.gz
-		mv phpMyAdmin-4.2.13.1-all-languages database-admin
+		mv phpMyAdmin-4.4.12-all-languages database-admin
 		rm phpmyadmin.tar.gz
 	else
 		echo "PHPMyAdmin already installed."
